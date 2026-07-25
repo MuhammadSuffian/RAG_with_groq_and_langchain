@@ -2,9 +2,9 @@
 
 A hands-on walkthrough of building Retrieval-Augmented Generation (RAG) pipelines using **LangChain**, **Groq** (LLaMA 3.3 70B), **HuggingFace sentence-transformer embeddings**, and **FAISS** as the vector store.
 
-This repo contains two notebooks that show the same pipeline at two stages — a baseline version and a version with retrieval tuning applied on top.
+This repo has two notebooks that show the same pipeline at two stages: a baseline version and a version with retrieval tuning applied on top.
 
-## 📓 Notebooks
+##  Notebooks
 
 ### `Basic_RAG.ipynb`
 Shows the core RAG idea from first principles:
@@ -15,7 +15,7 @@ Shows the core RAG idea from first principles:
 ### `Advance_RAG.ipynb`
 Builds on the same pipeline with a larger document set and sets up the scaffolding for retrieval tuning — explicit `search_type` and `search_kwargs` on the retriever, ready to be extended with MMR, score thresholds, and source-document tracing.
 
-## 🧠 Concepts covered
+##  Concepts covered
 
 - **RAG fundamentals** — why retrieval grounds an LLM's answer and reduces hallucination
 - **Embeddings** — using `sentence-transformers/all-MiniLM-L6-v2` (HuggingFace) to turn text into vectors
@@ -32,7 +32,7 @@ Builds on the same pipeline with a larger document set and sets up the scaffoldi
 - **Prompt engineering for RAG** — constraining the LLM to answer only from provided context, and to say "I don't know" when the context doesn't support an answer.
 - **Groq inference** — using Groq's LPU-backed API for fast LLaMA 3.3 70B inference instead of OpenAI.
 
-## ⚙️ Setup
+##  Setup
 
 1. Clone the repo:
    ```bash
@@ -53,19 +53,19 @@ Builds on the same pipeline with a larger document set and sets up the scaffoldi
 
 4. Open either notebook and run the cells top to bottom.
 
-## 📁 Requirements
+##  Requirements
 
 - Python 3.11+
 - A [Groq API key](https://console.groq.com) (free tier available)
 - No OpenAI key required — embeddings run locally via HuggingFace `sentence-transformers`
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [ ] Add `search_type="mmr"` and `"similarity_score_threshold"` examples with real output comparisons
 - [ ] Return and print `source_documents` for groundedness checking
 - [ ] Add real document chunking (currently uses short hardcoded strings, not a chunked corpus)
 - [ ] Compare retrieval quality across different `k` / `fetch_k` / `lambda_mult` values
 
-## 📄 License
+##  License
 
 MIT
